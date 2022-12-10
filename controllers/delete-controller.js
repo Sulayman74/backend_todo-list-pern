@@ -8,7 +8,8 @@ exports.delete_task = async (req, res) => {
     const deleteTodo = await pool.query("DELETE FROM todo WHERE todo_id = $1", [
       id,
     ]);
-    res.json("todo has been deleted");
+    const todos = await pool.query("SELECT * FROM todo")
+    res.json({ "message": "todo has been deleted", "todos": todos.rows });
   } catch (err) {
     console.error(err.message);
   }
