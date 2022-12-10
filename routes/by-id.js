@@ -9,6 +9,6 @@ const update = require("../controllers/update-controller");
 router.get("/", todo.getOneTodo);
 //** update a todo */
 
-router.put("/todos/:id/update", update.updateTodo);
+router.put("/", update.updateTodo);
 
 module.exports = router;
