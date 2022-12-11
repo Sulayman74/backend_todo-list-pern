@@ -11,18 +11,19 @@ app.connect(pool);
 
 // ** les routes **//
 
-const deleteRouter = require("../routes/delete");
-const getTasksRouter = require("../routes/get-tasks");
-const oneTodoRouter = require("../routes/by-id");
-const postsRouter = require("../routes/posts");
-const updateRouter = require("../routes/by-id");
+// const deleteRouter = require("../routes/delete");
+// const getTasksRouter = require("../routes/get-tasks");
+// const oneTodoRouter = require("../routes/by-id");
+// const postsRouter = require("../routes/posts");
+// const updateRouter = require("../routes/by-id");
 
-app.use("/api/todos/create", postsRouter);
-app.use("/api/todos/allTodos", getTasksRouter);
-app.use("/api/todos/:id/one", oneTodoRouter);
-app.use("/api/todos/:id/delete", deleteRouter);
-app.use("/api/todos/:id/update", updateRouter);
-
+// app.use("/api/todos/create", postsRouter);
+// app.use("/api/todos/allTodos", getTasksRouter);
+// app.use("/api/todos/one/:id", oneTodoRouter);
+// app.use("/api/todos/delete/:id", deleteRouter);
+// app.use("/api/todos/update/:id", updateRouter);
+const todoRouter = require("../routes/todo-router")
+app.use("/api/todos", todoRouter)
 app.listen(port, () => {
   console.log(`le server est sur le port ${port}`);
 });
