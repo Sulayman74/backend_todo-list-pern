@@ -8,6 +8,7 @@ const todo = require("../controllers/get-one-todo");
 const getAll = require("../controllers/get-all-todos");
 const deleteTodo = require("../controllers/delete-controller");
 
+todoRouter.use(authToken)
 todoRouter.post("/create", createTodo.addTodo);
 todoRouter.get("/allTodos", getAll.getAllTodos);
 todoRouter.get("/one/:id", todo.getOneTodo);
