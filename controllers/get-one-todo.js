@@ -1,6 +1,6 @@
 // ** get a specific todo/
 
-const pool = require("../server/config");
+const pool = require("../config");
 
 exports.getOneTodo = async (req, res) => {
   try {

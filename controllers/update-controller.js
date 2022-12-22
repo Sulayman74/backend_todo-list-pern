@@ -1,6 +1,6 @@
 //** update a todo */
 
-const pool = require("../server/config");
+const pool = require("../config");
 
 exports.updateTodo = async (req, res) => {
   try {

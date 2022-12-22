@@ -1,6 +1,6 @@
 //** get all the todos */
 
-const pool = require("../server/config");
+const pool = require("../config");
 
 exports.getAllTodos = async (req, res) => {
   try {

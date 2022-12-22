@@ -1,6 +1,6 @@
 //** delete a todo task */
 
-const pool = require("../server/config");
+const pool = require("../config");
 
 exports.delete_task = async (req, res) => {
   try {

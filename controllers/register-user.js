@@ -1,5 +1,5 @@
 
-const pool = require("../server/config");
+const pool = require("../config");
 const bcrypt = require("bcrypt");
 const validator = require("validator");
 const { isEmail } = validator
@@ -26,7 +26,7 @@ exports.register = async (request, response) => {
         let hashPassword = await bcrypt.hash(password, saltRounds)
 
 
-        const utilisateur = { email: request.body.email, user_id: request.body.user_id, lastname: request.body.lastname, firstname: request.body.firstname }
+        const utilisateur = { email: request.body.email, user_id: request.body.user_id, lastname: request.body.lastname, firstname: request.body.firstname , password : request.body.password}
         // TODO ------------- le JWT --------------------- //
 
         let tokens = jwtTokens(utilisateur)

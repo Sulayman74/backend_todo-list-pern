@@ -1,6 +1,6 @@
 // ** get a specific user/
 
-const pool = require("../server/config");
+const pool = require("../config");
 
 exports.getOneUser = async (req, res) => {
     try {

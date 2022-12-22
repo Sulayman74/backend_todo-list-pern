@@ -1,6 +1,6 @@
 //** création d'une tâche todo */
 
-const pool = require("../server/config");
+const pool = require("../config");
 
 exports.addTodo = async (request, response) => {
   try {

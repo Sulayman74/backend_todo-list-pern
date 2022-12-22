@@ -1,5 +1,5 @@
 
-const pool = require("../server/config");
+const pool = require("../config");
 
 exports.getUsers = async (req, res) => {
 
