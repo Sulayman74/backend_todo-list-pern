@@ -8,12 +8,14 @@ const todo = require("../controllers/get-one-todo");
 const getAll = require("../controllers/get-all-todos");
 const deleteTodo = require("../controllers/delete-controller");
 
-// todoRouter.use(authToken)
-todoRouter.post("/create", createTodo.addTodo);
-todoRouter.get("/allTodos", getAll.getAllTodos);
-todoRouter.get("/one/:id", todo.getOneTodo);
-todoRouter.delete("/delete/:id", deleteTodo.delete_task);
-todoRouter.put("/update/:id", update.updateTodo);
+
+//TODO ------------- todoRouter.use(authToken)
+
+todoRouter.post("/create", createTodo.addTodo)
+    .get("/allTodos", getAll.getAllTodos)
+    .get("/one/:id", todo.getOneTodo)
+    .delete("/delete/:id", deleteTodo.delete_task)
+    .put("/update/:id", update.updateTodo)
 
 
 
