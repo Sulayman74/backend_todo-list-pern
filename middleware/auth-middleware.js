@@ -5,7 +5,7 @@ const ACCESS_TOKEN_SECRET = "08221543d4fcdf8070bd1d0ebb1380303671b85797d236470ca
 // Define a middleware function that uses the verifyToken function to
 // authenticate requests
 function authenticateToken(req, res, next) {
-    
+
     const authorization = 'authorization';
     const authHeader = req.headers[authorization]; //Bearer TOKEN
     // const authHeader = req.headers.authorization; 
@@ -15,8 +15,9 @@ function authenticateToken(req, res, next) {
 
 
     try {
-        const decoded = jwt.verify(token,ACCESS_TOKEN_SECRET);
+        const decoded = jwt.verify(token, ACCESS_TOKEN_SECRET);
         req.user = decoded;
+
     } catch (err) {
         return res.status(403).send("Unauthorized");
     }
