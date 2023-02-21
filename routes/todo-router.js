@@ -7,6 +7,7 @@ const update = require("../controllers/update-controller");
 const todo = require("../controllers/get-one-todo");
 const getAll = require("../controllers/get-all-todos");
 const deleteTodo = require("../controllers/delete-controller");
+const getTodosByUser = require("../controllers/get-todos-by-user")
 
 
 //TODO ------------- todoRouter.use(authToken)
@@ -14,6 +15,7 @@ const deleteTodo = require("../controllers/delete-controller");
 todoRouter.post("/create", createTodo.addTodo)
     .get("/allTodos", getAll.getAllTodos)
     .get("/one/:id", todo.getOneTodo)
+    .get("/todos", getTodosByUser.getTodosByUser)
     .delete("/delete/:id", deleteTodo.delete_task)
     .put("/update/:id", update.updateTodo)
 
