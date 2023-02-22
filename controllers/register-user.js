@@ -7,7 +7,8 @@ const { jwtTokens } = require("../helpers/auth-helper")
 
 exports.register = async (request, response) => {
     try {
-        const { lastname, firstname, email, password } = request.body;
+
+        const { lastname, firstname, email, password, user_id } = request.body;
 
         if (!isEmail(email)) {
             console.log("invalid email");
@@ -26,17 +27,17 @@ exports.register = async (request, response) => {
         let hashPassword = await bcrypt.hash(password, saltRounds)
 
 
-        const utilisateur = { email: request.body.email, user_id: request.body.user_id, lastname: request.body.lastname, firstname: request.body.firstname , password : request.body.password}
+        const utilisateur = { email: request.body.email, user_id: request.body.user_id, lastname: request.body.lastname, firstname: request.body.firstname, password: request.body.password }
         // TODO ------------- le JWT --------------------- //
 
-        let tokens = jwtTokens(utilisateur)
+        let token = jwtTokens(utilisateur)
 
         const newUser = await pool.query(
             "INSERT INTO utilisateur(lastname,firstname,email,password) VALUES($1,$2,$3,$4) RETURNING *",
             [lastname, firstname, email, hashPassword]
         );
-        response.status(200).json({ "user": newUser.rows[0], message: "user added", tokens });
-        console.log("post add request");
+        response.status(200).json({ "user": newUser.rows[0], message: "user added", "token": token });
+
     } catch (error) {
         console.error(error.message);
     }
