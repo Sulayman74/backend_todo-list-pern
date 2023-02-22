@@ -10,7 +10,7 @@ const getUsers = require("../controllers/get-users")
 const getOneUser = require("../controllers/get-one-user")
 const getProfile = require("../controllers/get-profile")
 //!-------------------------------- les routes qui n'ont pas besoin d'authentification ----------------------------//
-userRouter.post("/create", registerUser.register)
+userRouter.post("/register", registerUser.register)
     .post("/login", loginUser.login)
 
 //? ------------------------------- les routes AVEC les authentifications nécessaires (token)-------------------//
