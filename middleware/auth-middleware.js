@@ -1,6 +1,6 @@
 
 const jwt = require("jsonwebtoken");
-const ACCESS_TOKEN_SECRET = "08221543d4fcdf8070bd1d0ebb1380303671b85797d236470ca756ad2e40b7e9338f142bab45"
+const SECRET = process.env.ACCESS_TOKEN_SECRET
 
 // Define a middleware function that uses the verifyToken function to
 // authenticate requests
@@ -15,7 +15,7 @@ function authenticateToken(req, res, next) {
 
 
     try {
-        const decoded = jwt.verify(token, ACCESS_TOKEN_SECRET);
+        const decoded = jwt.verify(token, SECRET);
         req.user = decoded;
 
     } catch (err) {
