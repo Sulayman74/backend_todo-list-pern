@@ -26,5 +26,8 @@
     "nodemon": "^2.0.20",
     "pg": "^8.8.0",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@vercel/node": "^2.9.12"
   }
 }
