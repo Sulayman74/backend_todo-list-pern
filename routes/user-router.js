@@ -15,7 +15,7 @@ userRouter.post("/register", registerUser.register)
 
 //? ------------------------------- les routes AVEC les authentifications nécessaires (token)-------------------//
 
-// userRouter.use(authToken);
+userRouter.use(authToken);
 // j'utilise le middleware ici pour toute les routes qui ont besoin du token pour accéder à la route
 
 
