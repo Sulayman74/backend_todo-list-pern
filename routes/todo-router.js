@@ -13,7 +13,7 @@ const getTodosByUser = require("../controllers/get-todos-by-user")
 
 todoRouter
     .get("/allTodos", getAll.getAllTodos)
-todoRouter.use(authToken)
+    // todoRouter.use(authToken)
     .post("/create", createTodo.addTodo)
     .get("/todos", getTodosByUser.getTodosByUser)
     .get("/one/:id", todo.getOneTodo)
