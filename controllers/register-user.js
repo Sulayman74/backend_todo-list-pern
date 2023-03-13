@@ -42,4 +42,4 @@ exports.register = async (request, response) => {
         console.error(error.message);
     }
 };
-
+// ajout de commentaires test
